@@ -4,5 +4,26 @@ pragma solidity ^0.8.19;
 import "@account-abstraction/contracts/interfaces/IAccount.sol";
 
 interface IPrivateAccount is IAccount {
-    // TODO: Add custom methods
+    event DoxxedAddressHashAdded(bytes32 indexed addressHash);
+    event DoxxedAddressHashRemoved(bytes32 indexed addressHash);
+
+    /**
+     * @return array of hashes of doxxed addresses
+     */
+    function getDoxxedAddressHashes()
+        external
+        view
+        returns (bytes32[] memory);
+
+    /**
+     * add a hash of doxxed address
+     * @param addressHash hash of doxxed address
+     */
+    function addDoxxedAddressHash(bytes32 addressHash) external;
+
+    /**
+     * remove a hash of doxxed address
+     * @param addressHash hash of doxxed address
+     */
+    function removeDoxxedAddressHash(bytes32 addressHash) external;
 }

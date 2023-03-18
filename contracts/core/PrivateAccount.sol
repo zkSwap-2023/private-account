@@ -19,6 +19,8 @@ contract PrivateAccount is BaseAccount, IPrivateAccount, Ownable {
     uint96 private _nonce;
     IEntryPoint private immutable _entryPoint;
     bool private _initialized;
+    mapping(bytes32 => bool) private _isDoxxedAddressHash;
+    bytes32[] private _doxxedAddressHashes;
 
     /*//////////////////////////////////////////////////////////////
                                 EVENTS
@@ -49,6 +51,27 @@ contract PrivateAccount is BaseAccount, IPrivateAccount, Ownable {
     /// @inheritdoc BaseAccount
     function entryPoint() public view virtual override returns (IEntryPoint) {
         return _entryPoint;
+    }
+
+    function initialized() public view returns (bool) {
+        return _initialized;
+    }
+
+    function getDoxxedAddressHashes()
+        public
+        view
+        returns (bytes32[] memory)
+    {
+        return _doxxedAddressHashes;
+    }
+
+    /**
+     *  Takes an address and returns its hash
+     *  @param account the account address to be hashed
+     *  @notice this can be used to add/remove address hashes from doxxed address hashes
+     */
+    function hashAddress(address account) public pure returns (bytes32) {
+        return keccak256(abi.encodePacked(account));
     }
 
     // solhint-disable-next-line no-empty-blocks
@@ -83,6 +106,18 @@ contract PrivateAccount is BaseAccount, IPrivateAccount, Ownable {
         _initialize(owner);
     }
 
+    /// @inheritdoc IPrivateAccount
+    function addDoxxedAddressHash(bytes32 addressHash) external {
+        _requireFromEntryPointOrOwner();
+        _addDoxxedAddressHash(addressHash);
+    }
+
+    /// @inheritdoc IPrivateAccount
+    function removeDoxxedAddressHash(bytes32 addressHash) external {
+        _requireFromEntryPointOrOwner();
+        _removeDoxxedAddressHash(addressHash);
+    }
+
     /*//////////////////////////////////////////////////////////////
                             INTERNALS
     //////////////////////////////////////////////////////////////*/
@@ -102,6 +137,14 @@ contract PrivateAccount is BaseAccount, IPrivateAccount, Ownable {
         );
     }
 
+    /// Require the destination address is not doxxed
+    function _requireDestNotDoxxed(address dest) internal view {
+        require(
+            !_isDoxxedAddressHash[hashAddress(dest)],
+            "Doxxed: Destination Account is Doxxed"
+        );
+    }
+
     /// implementation of method from BaseAccount
     function _validateAndUpdateNonce(
         UserOperation calldata userOp
@@ -118,5 +161,28 @@ contract PrivateAccount is BaseAccount, IPrivateAccount, Ownable {
         if (owner() != hash.recover(userOp.signature))
             return SIG_VALIDATION_FAILED;
         return 0;
+    }
+
+    /// add address hash mapping and push to doxxed address hash array
+    function _addDoxxedAddressHash(bytes32 addressHash) internal {
+        _isDoxxedAddressHash[addressHash] = true;
+        _doxxedAddressHashes.push(addressHash);
+        emit DoxxedAddressHashAdded(addressHash);
+    }
+
+    /// delete address hash mapping and pop from doxxed address hash array
+    function _removeDoxxedAddressHash(bytes32 addressHash) internal {
+        delete _isDoxxedAddressHash[addressHash];
+        for (uint256 i = 0; i < _doxxedAddressHashes.length; i++) {
+            if (_doxxedAddressHashes[i] == addressHash) {
+                // overwrite address hash with the last element before popping
+                _doxxedAddressHashes[i] = _doxxedAddressHashes[
+                    _doxxedAddressHashes.length - 1
+                ];
+                _doxxedAddressHashes.pop();
+                break;
+            }
+        }
+        emit DoxxedAddressHashRemoved(addressHash);
     }
 }
