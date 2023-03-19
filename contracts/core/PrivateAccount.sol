@@ -57,12 +57,14 @@ contract PrivateAccount is BaseAccount, IPrivateAccount, Ownable {
         return _initialized;
     }
 
-    function getDoxxedAddressHashes()
-        public
-        view
-        returns (bytes32[] memory)
-    {
+    function getDoxxedAddressHashes() public view returns (bytes32[] memory) {
         return _doxxedAddressHashes;
+    }
+
+    function isDoxxedAddressHash(
+        bytes32 addressHash
+    ) public view returns (bool) {
+        return _isDoxxedAddressHash[addressHash];
     }
 
     /**

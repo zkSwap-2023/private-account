@@ -10,10 +10,14 @@ interface IPrivateAccount is IAccount {
     /**
      * @return array of hashes of doxxed addresses
      */
-    function getDoxxedAddressHashes()
-        external
-        view
-        returns (bytes32[] memory);
+    function getDoxxedAddressHashes() external view returns (bytes32[] memory);
+
+    /**
+     * @return whether or not address hash is doxxed
+     */
+    function isDoxxedAddressHash(
+        bytes32 addressHash
+    ) external view returns (bool);
 
     /**
      * add a hash of doxxed address
