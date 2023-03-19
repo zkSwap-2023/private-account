@@ -1,12 +1,12 @@
 import { ethers } from "hardhat";
+import { ENTRYPOINT } from "../test/utils/constants";
 
 async function main() {
-  const ENTRYPOINT = '0x0576a174D229E3cFA37253523E645A78A0C91B57';
 
   const Factory = await ethers.getContractFactory("PrivateAccountFactory");
   const factory = await Factory.deploy(ENTRYPOINT);
 
-  console.log('Factory deployed to:', factory.address);
+  console.log("Factory deployed to:", factory.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
