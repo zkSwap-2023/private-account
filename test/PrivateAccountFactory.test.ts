@@ -1,7 +1,7 @@
 import hre, { ethers } from "hardhat";
 import { expect } from "chai";
-import { PrivateAccountFactory, FixtureEntryPoint } from "../typechain-types";
 import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
+import { PrivateAccountFactory, FixtureEntryPoint } from "../typechain-types";
 import { deployEntrypoint } from "./utils/fixtures";
 
 describe("Entrypoint", () => {
