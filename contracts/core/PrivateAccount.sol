@@ -84,15 +84,18 @@ contract PrivateAccount is BaseAccount, IPrivateAccount, Ownable {
     //////////////////////////////////////////////////////////////*/
 
     /**
-     *  execute one or multuple transactions
+     *  execute one or multiple transactions
      *  @param dest array of destination contract addresses
+     *  @param value array of values to transfer
+     *  @dev value cannot be empty, use 0 values
      *  @param func array of abi encoded functions with calldata
      */
-    function execute(address[] calldata dest, bytes[] calldata func) external {
+    function execute(address[] calldata dest, uint256[] calldata value, bytes[] calldata func) external {
         _requireFromEntryPointOrOwner();
         require(dest.length == func.length, "wrong array lengths");
         for (uint256 i = 0; i < dest.length; i++) {
-            (bool success, bytes memory result) = dest[i].call{value: 0}(
+            _requireDestNotDoxxed(dest[i]);
+            (bool success, bytes memory result) = dest[i].call{value: value[i]}(
                 func[i]
             );
             if (!success) {
