@@ -8,6 +8,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 // Local Dependencies
 import "../interfaces/IPrivateAccount.sol";
+import "hardhat/console.sol";
 
 contract PrivateAccount is BaseAccount, IPrivateAccount, Ownable {
     using ECDSA for bytes32;
@@ -69,11 +70,11 @@ contract PrivateAccount is BaseAccount, IPrivateAccount, Ownable {
 
     /**
      *  Takes an address and returns its hash
-     *  @param account the account address to be hashed
+     *  @param addr the address to be hashed
      *  @notice this can be used to add/remove address hashes from doxxed address hashes
      */
-    function hashAddress(address account) public pure returns (bytes32) {
-        return keccak256(abi.encodePacked(account));
+    function hashAddress(address addr) public pure returns (bytes32) {
+        return _hashAddress(addr);
     }
 
     // solhint-disable-next-line no-empty-blocks
@@ -132,6 +133,10 @@ contract PrivateAccount is BaseAccount, IPrivateAccount, Ownable {
         _initialized = true;
         _transferOwnership(owner);
         emit PrivateAccountInitialized(_entryPoint, owner);
+    }
+
+    function _hashAddress(address addr) internal pure returns (bytes32) {
+        return keccak256(abi.encode(addr));
     }
 
     /// Require the function call went through EntryPoint or owner
