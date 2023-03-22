@@ -91,10 +91,15 @@ contract PrivateAccount is BaseAccount, IPrivateAccount, Ownable {
      *  @dev value cannot be empty, use 0 values
      *  @param func array of abi encoded functions with calldata
      */
-    function execute(address[] calldata dest, uint256[] calldata value, bytes[] calldata func) external {
+    function execute(
+        address[] calldata dest,
+        uint256[] calldata value,
+        bytes[] calldata func
+    ) external {
         _requireFromEntryPointOrOwner();
         require(dest.length == func.length, "wrong array lengths");
-        for (uint256 i = 0; i < dest.length; i++) {
+        uint256 length = dest.length;
+        for (uint256 i = 0; i < length; i++) {
             _requireDestNotDoxxed(dest[i]);
             (bool success, bytes memory result) = dest[i].call{value: value[i]}(
                 func[i]
@@ -183,12 +188,11 @@ contract PrivateAccount is BaseAccount, IPrivateAccount, Ownable {
     /// delete address hash mapping and pop from doxxed address hash array
     function _removeDoxxedAddressHash(bytes32 addressHash) internal {
         delete _isDoxxedAddressHash[addressHash];
-        for (uint256 i = 0; i < _doxxedAddressHashes.length; i++) {
+        uint256 length = _doxxedAddressHashes.length;
+        for (uint256 i = 0; i < length; i++) {
             if (_doxxedAddressHashes[i] == addressHash) {
                 // overwrite address hash with the last element before popping
-                _doxxedAddressHashes[i] = _doxxedAddressHashes[
-                    _doxxedAddressHashes.length - 1
-                ];
+                _doxxedAddressHashes[i] = _doxxedAddressHashes[length - 1];
                 _doxxedAddressHashes.pop();
                 break;
             }
