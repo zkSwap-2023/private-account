@@ -123,45 +123,40 @@ describe("PrivateAccount", () => {
     ).to.be.revertedWith("Doxxed: Destination Account is Doxxed");
   });
 
-  // TODO
-  //   it("should execute multiple ERC20 transactions successfully", async () => {
-  //     // Target contract address
-  //     const dest = [dummyToken.address, dummyToken.address];
-  //     // ERC20 recipient
-  //     const to = [owner.address, unDoxxedAccount.address];
-  //     // 0 Values
-  //     const value = [ZERO_ETH, ZERO_ETH];
-  //     // ERC20 amount
-  //     const amount = [ONE_ETH, FIVE_ETH];
-  //     // Get initial balances using map() and Promise.all()
-  //     const initialBalances = await Promise.all(
-  //       dest.map(async (address) => {
-  //         return await dummyToken.balanceOf(address);
-  //       })
-  //     );
+  it("should execute multiple ERC20 transactions successfully", async () => {
+    // Target contract address
+    const dest = [dummyToken.address, dummyToken.address];
+    // ERC20 recipient
+    const to = [owner.address, unDoxxedAccount.address];
+    // 0 Values
+    const value = [ZERO_ETH, ZERO_ETH];
+    // ERC20 amount
+    const amount = [ONE_ETH, FIVE_ETH];
+    // Get initial balances using map() and Promise.all()
+    const initialBalances = await Promise.all(
+      to.map(async (address) => {
+        return await dummyToken.balanceOf(address);
+      })
+    );
 
-  //     console.log(initialBalances);
+    // Encode transfer transaction
+    const func = [
+      dummyToken.interface.encodeFunctionData("transfer", [to[0], amount[0]]),
+      dummyToken.interface.encodeFunctionData("transfer", [to[1], amount[1]]),
+    ];
 
-  //     // Encode transfer transaction
-  //     const func = [
-  //       dummyToken.interface.encodeFunctionData("transfer", [to[0], amount[0]]),
-  //       dummyToken.interface.encodeFunctionData("transfer", [to[1], amount[1]]),
-  //     ];
+    await privateAccount.execute(dest, value, func);
 
-  //     await privateAccount.execute(dest, value, func);
+    const finalBalances = await Promise.all(
+      to.map(async (address) => {
+        return await dummyToken.balanceOf(address);
+      })
+    );
 
-  //     const finalBalances = await Promise.all(
-  //       dest.map(async (address) => {
-  //         return await dummyToken.balanceOf(address);
-  //       })
-  //     );
-
-  //     console.log(finalBalances);
-
-  //     // Compare initial and final balances
-  //     for (let i = 0; i < dest.length; i++) {
-  //       const diff = finalBalances[i].sub(initialBalances[i]);
-  //       expect(diff).to.equal(amount[i]);
-  //     }
-  //   });
+    // Compare initial and final balances
+    for (let i = 0; i < dest.length; i++) {
+      const diff = finalBalances[i].sub(initialBalances[i]);
+      expect(diff).to.equal(amount[i]);
+    }
+  });
 });
