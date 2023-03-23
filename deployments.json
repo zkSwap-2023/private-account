@@ -1,0 +1,22 @@
+{
+    "goerli": {
+        "DummyToken": "0x7a91afba6141356C78a8F943c5a3b7d35A3196FC",
+        "PrivateAccountFactory": "0x18E7E0F66520C4924F612C6f3a461cb285eD1AC8",
+        "PrivateAccount": "0x8457140a29455F2Ad0e09EBf1E270FC9517503aC"
+    },
+    "sepolia": {
+        "PrivateAccountFactory": "0x7a91afba6141356C78a8F943c5a3b7d35A3196FC",
+        "PrivateAccount": "0x84FFFB6Db190D2bEFF7A921b532183A981353156"
+    },
+    "mumbai": {
+        "PrivateAccountFactory": "0x0fFF482ebe831EA13470b2278D659d8aD9038201",
+        "PrivateAccount": "0xe3a223fc1c6b78ae6a2ea32e3e81947b185700fa"
+    },
+    "gnosis": {
+        "PrivateAccountFactory": "0x18E7E0F66520C4924F612C6f3a461cb285eD1AC8",
+        "PrivateAccount": "0x8457140a29455f2ad0e09ebf1e270fc9517503ac"
+    },
+    "scroll": {
+        "privateAccountFactory": "0x05c278ca74c08a8811B89c15553b22F35848f8d7"
+    }
+}

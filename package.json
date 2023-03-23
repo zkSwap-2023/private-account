@@ -2,7 +2,8 @@
   "name": "private-swap",
   "scripts": {
     "prettier": "prettier --write 'contracts/**/*.sol'",
-    "deploy": "hardhat run scripts/deploy.ts"
+    "deploy:privateAccountFactory": "hardhat run scripts/deploy-privateAccountFactory.ts",
+    "deploy:dummytoken": "hardhat run scripts/deploy-dummyToken.ts"
   },
   "devDependencies": {
     "@account-abstraction/contracts": "^0.5.0",

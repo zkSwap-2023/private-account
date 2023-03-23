@@ -61,7 +61,7 @@ describe("PrivateAccount", () => {
     privateAccount = await PrivateAccount.deploy(entryPoint.address);
 
     // Deploy a dummy ERC20 token
-    dummyToken = await DummyToken.deploy("StableCoin", "SC");
+    dummyToken = await DummyToken.deploy();
 
     // Fund privateAccount
     await dummyToken.mint(privateAccount.address);
