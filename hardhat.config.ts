@@ -41,7 +41,7 @@ const config: HardhatUserConfig = {
     apiKey: {
       goerli: process.env.ETHERSCAN_API_KEY,
       sepolia: process.env.ETHERSCAN_API_KEY,
-      optimisticGoerli: process.env.ETHERSCAN_API_KEY,
+      optimisticGoerli: process.env.OPTIMISIC_API_KEY,
       gnosis: process.env.GNOSISSCAN_API_KEY,
       polygonMumbai: process.env.POLYGONSCAN_API_KEY,
     },
