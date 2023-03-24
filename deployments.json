@@ -1,49 +1,44 @@
 {
     "goerli": {
-        "DummyToken": "0x7a91afba6141356C78a8F943c5a3b7d35A3196FC",
-        "PrivateAccountFactory": "0x18E7E0F66520C4924F612C6f3a461cb285eD1AC8",
-        "PrivateAccount": "0x8457140a29455F2Ad0e09EBf1E270FC9517503aC",
-        "ERC20Mixer": "0x1d58ee2645ffe1eFCC014158d472ad2c015b6ED1",
-        "Verifier": "0xDC300ABa92590FE2144B397C17D8C5655A7Ef19D",
-        "Hasher": "0xb886AD50B15D897Fde98089d26148aE9572D22E7"
-    },
-    "sepolia": {
-        "PrivateAccountFactory": "0x7a91afba6141356C78a8F943c5a3b7d35A3196FC",
-        "PrivateAccount": "0x84FFFB6Db190D2bEFF7A921b532183A981353156"
+        "PrivateAccountFactory": "0x9a2F3a3Eb3Db86D5F0855a93674376D71248f7eE",
+        "PrivateAccount": "0x82DFDE88238B55a064cdbabF67eB80f80B5AEE4B",
+        "ERC20Mixer": "0xC8f8031C10435C15Ff14c1176Be812EbE307005e",
+        "Verifier": "0xA4417b6C7d7716BeE93e9D23CEE61B45085b5d59",
+        "Hasher": "0x250eaa19597a23746b8daaf9a1bB03191875e7F2"
     },
     "optimism": {
-        "DummyToken": "0x0fFF482ebe831EA13470b2278D659d8aD9038201",
-        "PrivateAccountFactory": "0x7a91afba6141356C78a8F943c5a3b7d35A3196FC",
-        "PrivateAccount": "0x84fffb6db190d2beff7a921b532183a981353156",
-        "ERC20Mixer": "0xb886AD50B15D897Fde98089d26148aE9572D22E7",
-        "Verifier": "0x05c278ca74c08a8811B89c15553b22F35848f8d7",
-        "Hasher": "0x91Db0E3Af14E29cC3616f5195adef8a96D9787c7"
+        "PrivateAccountFactory": "0x9a2F3a3Eb3Db86D5F0855a93674376D71248f7eE",
+        "PrivateAccount": "0x82DFDE88238B55a064cdbabF67eB80f80B5AEE4B",
+        "ERC20Mixer": "0xC8f8031C10435C15Ff14c1176Be812EbE307005e",
+        "Verifier": "0xA4417b6C7d7716BeE93e9D23CEE61B45085b5d59",
+        "Hasher": "0x250eaa19597a23746b8daaf9a1bB03191875e7F2"
     },
     "mumbai": {
-        "DummyToken": "0x91Db0E3Af14E29cC3616f5195adef8a96D9787c7",
-        "PrivateAccountFactory": "0x0fFF482ebe831EA13470b2278D659d8aD9038201",
-        "PrivateAccount": "0xe3a223fc1c6b78ae6a2ea32e3e81947b185700fa",
-        "ERC20Mixer": "0xDC300ABa92590FE2144B397C17D8C5655A7Ef19D",
-        "Verifier": "0xb886AD50B15D897Fde98089d26148aE9572D22E7",
-        "Hasher": "0x05c278ca74c08a8811B89c15553b22F35848f8d7"
+        "PrivateAccountFactory": "0x9a2F3a3Eb3Db86D5F0855a93674376D71248f7eE",
+        "PrivateAccount": "0x82DFDE88238B55a064cdbabF67eB80f80B5AEE4B",
+        "ERC20Mixer": "0xC8f8031C10435C15Ff14c1176Be812EbE307005e",
+        "Verifier": "0xA4417b6C7d7716BeE93e9D23CEE61B45085b5d59",
+        "Hasher": "0x250eaa19597a23746b8daaf9a1bB03191875e7F2"
     },
     "gnosis": {
-        "DummyToken": "0xBa8009717f6936B8B0B2454548A1B2B62887b493",
-        "PrivateAccountFactory": "0x18E7E0F66520C4924F612C6f3a461cb285eD1AC8",
-        "PrivateAccount": "0x8457140a29455f2ad0e09ebf1e270fc9517503ac"
+        "PrivateAccountFactory": "0x9a2F3a3Eb3Db86D5F0855a93674376D71248f7eE",
+        "PrivateAccount": "0x82DFDE88238B55a064cdbabF67eB80f80B5AEE4B",
+        "ERC20Mixer": "0xC8f8031C10435C15Ff14c1176Be812EbE307005e",
+        "Verifier": "0xA4417b6C7d7716BeE93e9D23CEE61B45085b5d59",
+        "Hasher": "0x250eaa19597a23746b8daaf9a1bB03191875e7F2"
     },
     "scroll": {
-        "DummyToken": "0x6467616C396dFe7Efa1d820e6b0E053631EB302A",
-        "privateAccountFactory": "0x05c278ca74c08a8811B89c15553b22F35848f8d7",
-        "ERC20Mixer": "0x05c278ca74c08a8811B89c15553b22F35848f8d7",
-        "Verifier": "0x91Db0E3Af14E29cC3616f5195adef8a96D9787c7",
-        "Hasher": "0x0fFF482ebe831EA13470b2278D659d8aD9038201"
+        "PrivateAccountFactory": "0x9a2F3a3Eb3Db86D5F0855a93674376D71248f7eE",
+        "PrivateAccount": "0x82DFDE88238B55a064cdbabF67eB80f80B5AEE4B",
+        "ERC20Mixer": "0xC8f8031C10435C15Ff14c1176Be812EbE307005e",
+        "Verifier": "0xA4417b6C7d7716BeE93e9D23CEE61B45085b5d59",
+        "Hasher": "0x250eaa19597a23746b8daaf9a1bB03191875e7F2"
     },
     "polygonzkevm": {
-        "DummyToken": "0x05c278ca74c08a8811B89c15553b22F35848f8d7",
-        "privateAccountFactory": "0xBa8009717f6936B8B0B2454548A1B2B62887b493",
-        "ERC20Mixer": "0xa934aDAe22DFd5F8C233F20646A271fD24517B7F",
-        "Verifier": "0xDC300ABa92590FE2144B397C17D8C5655A7Ef19D",
-        "Hasher": "0xb886AD50B15D897Fde98089d26148aE9572D22E7"
+        "PrivateAccountFactory": "0x9a2F3a3Eb3Db86D5F0855a93674376D71248f7eE",
+        "PrivateAccount": "0x82DFDE88238B55a064cdbabF67eB80f80B5AEE4B",
+        "ERC20Mixer": "0xC8f8031C10435C15Ff14c1176Be812EbE307005e",
+        "Verifier": "0xA4417b6C7d7716BeE93e9D23CEE61B45085b5d59",
+        "Hasher": "0x250eaa19597a23746b8daaf9a1bB03191875e7F2"
     }
 }
