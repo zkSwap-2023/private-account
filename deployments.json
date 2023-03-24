@@ -2,6 +2,7 @@
     "goerli": {
         "PrivateAccountFactory": "0x9a2F3a3Eb3Db86D5F0855a93674376D71248f7eE",
         "PrivateAccount": "0x82DFDE88238B55a064cdbabF67eB80f80B5AEE4B",
+        "Paymaster": "0xEb4B93CecB2afA542485Bc8d42B58F2e7A706E8e",
         "ERC20Mixer": "0xC8f8031C10435C15Ff14c1176Be812EbE307005e",
         "Verifier": "0xA4417b6C7d7716BeE93e9D23CEE61B45085b5d59",
         "Hasher": "0x250eaa19597a23746b8daaf9a1bB03191875e7F2"
@@ -9,6 +10,7 @@
     "optimism": {
         "PrivateAccountFactory": "0x9a2F3a3Eb3Db86D5F0855a93674376D71248f7eE",
         "PrivateAccount": "0x82DFDE88238B55a064cdbabF67eB80f80B5AEE4B",
+        "Paymaster": "0xEb4B93CecB2afA542485Bc8d42B58F2e7A706E8e",
         "ERC20Mixer": "0xC8f8031C10435C15Ff14c1176Be812EbE307005e",
         "Verifier": "0xA4417b6C7d7716BeE93e9D23CEE61B45085b5d59",
         "Hasher": "0x250eaa19597a23746b8daaf9a1bB03191875e7F2"
@@ -16,6 +18,7 @@
     "mumbai": {
         "PrivateAccountFactory": "0x9a2F3a3Eb3Db86D5F0855a93674376D71248f7eE",
         "PrivateAccount": "0x82DFDE88238B55a064cdbabF67eB80f80B5AEE4B",
+        "Paymaster": "0xEb4B93CecB2afA542485Bc8d42B58F2e7A706E8e",
         "ERC20Mixer": "0xC8f8031C10435C15Ff14c1176Be812EbE307005e",
         "Verifier": "0xA4417b6C7d7716BeE93e9D23CEE61B45085b5d59",
         "Hasher": "0x250eaa19597a23746b8daaf9a1bB03191875e7F2"
@@ -23,6 +26,7 @@
     "gnosis": {
         "PrivateAccountFactory": "0x9a2F3a3Eb3Db86D5F0855a93674376D71248f7eE",
         "PrivateAccount": "0x82DFDE88238B55a064cdbabF67eB80f80B5AEE4B",
+        "Paymaster": "0xEb4B93CecB2afA542485Bc8d42B58F2e7A706E8e",
         "ERC20Mixer": "0xC8f8031C10435C15Ff14c1176Be812EbE307005e",
         "Verifier": "0xA4417b6C7d7716BeE93e9D23CEE61B45085b5d59",
         "Hasher": "0x250eaa19597a23746b8daaf9a1bB03191875e7F2"
@@ -30,6 +34,7 @@
     "scroll": {
         "PrivateAccountFactory": "0x9a2F3a3Eb3Db86D5F0855a93674376D71248f7eE",
         "PrivateAccount": "0x82DFDE88238B55a064cdbabF67eB80f80B5AEE4B",
+        "Paymaster": "0xEb4B93CecB2afA542485Bc8d42B58F2e7A706E8e",
         "ERC20Mixer": "0xC8f8031C10435C15Ff14c1176Be812EbE307005e",
         "Verifier": "0xA4417b6C7d7716BeE93e9D23CEE61B45085b5d59",
         "Hasher": "0x250eaa19597a23746b8daaf9a1bB03191875e7F2"
@@ -37,6 +42,7 @@
     "polygonzkevm": {
         "PrivateAccountFactory": "0x9a2F3a3Eb3Db86D5F0855a93674376D71248f7eE",
         "PrivateAccount": "0x82DFDE88238B55a064cdbabF67eB80f80B5AEE4B",
+        "Paymaster": "0xEb4B93CecB2afA542485Bc8d42B58F2e7A706E8e",
         "ERC20Mixer": "0xC8f8031C10435C15Ff14c1176Be812EbE307005e",
         "Verifier": "0xA4417b6C7d7716BeE93e9D23CEE61B45085b5d59",
         "Hasher": "0x250eaa19597a23746b8daaf9a1bB03191875e7F2"

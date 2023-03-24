@@ -3,7 +3,8 @@
   "scripts": {
     "prettier": "prettier --write 'contracts/**/*.sol'",
     "deploy:privateAccountFactory": "hardhat run scripts/deploy-privateAccountFactory.ts",
-    "deploy:dummytoken": "hardhat run scripts/deploy-dummyToken.ts"
+    "deploy:dummytoken": "hardhat run scripts/deploy-dummyToken.ts",
+    "deploy:paymaster": "hardhat run scripts/deploy-privatePaymaster.ts"
   },
   "devDependencies": {
     "@account-abstraction/contracts": "^0.5.0",
